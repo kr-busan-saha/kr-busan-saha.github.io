@@ -122,35 +122,404 @@
   ]
 }
   </script>
-  <style>
-:root { --fg:#1a1a2e; --muted:#5c5c72; --accent:#2d5bff; --bg:#ffffff; --card:#f6f7fb; --line:#e6e8f0; }
-* { box-sizing: border-box; }
-body { margin:0; font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; color:var(--fg); background:var(--bg); line-height:1.7; }
-main { max-width: 760px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
-header { padding: 2rem 0 1rem; border-bottom: 2px solid var(--line); margin-bottom: 1.5rem; }
-.eyebrow { color: var(--accent); font-weight: 600; margin: 0 0 .25rem; letter-spacing: .02em; }
-h1 { font-size: 2.4rem; margin: 0; }
-h2 { font-size: 1.25rem; margin: 2rem 0 .5rem; padding-left: .6rem; border-left: 4px solid var(--accent); }
-section p { margin: .25rem 0 0; }
-ul { margin: .5rem 0 0; padding-left: 1.2rem; }
-li { margin: .25rem 0; }
-.facts, .symbols { list-style: none; padding: 1rem 1.2rem; background: var(--card); border-radius: 12px; }
-.faq details { border: 1px solid var(--line); border-radius: 10px; padding: .5rem .9rem; margin: .5rem 0; }
-.faq summary { cursor: pointer; font-weight: 600; }
-.faq details p { margin: .5rem 0 .25rem; color: var(--muted); }
-.sources { font-size: .9rem; color: var(--muted); }
-a { color: var(--accent); }
-footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
-</style>
+  <script id="region-data" type="application/json">
+{
+  "characteristics": "사하구의 인구는 2023년 기준 약 30만 명 수준으로, 괴정동과 하단동을 중심으로 상권과 주거가 밀집해 있습니다. 면적은 약 41.7km²로 부산 16개 구·군 가운데 다섯 번째로 넓으며, 감천동·다대동·장림동·구평동 등 16개 행정동으로 구성됩니다. 산업 측면에서는 신평·장림 국가산업단지가 조성되어 제조업체가 밀집해 있고, 감천항과 다대포항을 통한 물류·수산 기능이 서부산 경제를 뒷받침합니다. 한국남부발전의 부산복합화력발전소가 자리해 지역 에너지 공급의 거점 역할도 합니다. 동아대학교 승학캠퍼스와 부산보건대학교가 있어 교육·연구 기능도 갖추었습니다. 산업단지와 항만, 대학, 그리고 생태 관광이 한 자치구 안에 촘촘히 얽혀 있는 복합적 도시 성격이 사하구를 규정합니다.",
+  "coords": {
+    "lat": 35.1046,
+    "lng": 128.9746
+  },
+  "cultural_heritage": [
+    {
+      "description": "2007년 을숙도에 개관한 생태 전시·교육 시설로, 철새와 습지에 관한 전시와 2층 전망대에서 망원경으로 철새를 관찰할 수 있는 낙동강 하구 생태의 거점입니다.",
+      "name": "낙동강하구에코센터"
+    },
+    {
+      "description": "대공연장과 소공연장, 사하문화원, 다목적 체육관을 갖춘 복합 문화시설로, 앞뜰의 을숙도조각공원과 함께 사하구 문화예술 활동의 중심 역할을 합니다.",
+      "name": "을숙도문화회관"
+    },
+    {
+      "description": "음악과 조명에 맞춰 물줄기가 솟구치는 바닥음악분수로, 2010년 세계 최대 규모의 바닥분수로 기네스 세계기록에 등재된 다대포의 야경 명물입니다.",
+      "name": "다대포 꿈의 낙조분수"
+    },
+    {
+      "description": "조선시대 다대포진의 관아 건물로, 왜구 방어의 요충지였던 다대포의 군사·행정 역사를 전하는 사하구의 대표 문화유산입니다.",
+      "name": "다대진 동헌"
+    },
+    {
+      "description": "을숙도에 위치한 전시관으로 낙동강의 자연과 역사, 하구 습지 생태를 소개하며 하구둑 전망대와 연계해 낙동강을 조망할 수 있습니다.",
+      "name": "낙동강문화관"
+    }
+  ],
+  "faq": [
+    {
+      "answer": "조선시대 동래부 사천면(沙川面)의 아래쪽 하단부(下端)에 해당한다 하여 사천의 '사(沙)'와 아래를 뜻하는 '하(下)'를 합쳐 사하(沙下)라는 이름이 붙었습니다.",
+      "question": "사하구라는 이름은 어떻게 유래했나요?"
+    },
+    {
+      "answer": "1942년 부산부에 편입된 이 일대가 인구 증가로 1983년 12월 15일 서구에서 분리되면서 오늘날의 사하구로 신설되었습니다.",
+      "question": "사하구는 언제 만들어졌나요?"
+    },
+    {
+      "answer": "낙동강 하구 삼각주에 형성된 섬으로 갈대밭과 습지가 펼쳐진 세계적인 철새 도래지이며, 낙동강하구에코센터와 생태공원이 조성되어 있습니다.",
+      "question": "을숙도는 어떤 곳인가요?"
+    },
+    {
+      "answer": "낙동강이 실어 온 고운 모래로 이루어진 넓은 백사장이 특징이며 수심이 얕고 수온이 따뜻해 가족 피서지로 좋고, 꿈의 낙조분수와 함께 아름다운 일몰로 유명합니다.",
+      "question": "다대포해수욕장의 특징은 무엇인가요?"
+    },
+    {
+      "answer": "부산 도시철도 1호선이 괴정역·하단역·신평역을 거쳐 다대포해수욕장역까지 이어져 있어 지하철로 편리하게 접근할 수 있습니다.",
+      "question": "사하구를 대중교통으로 가려면 어떻게 하나요?"
+    },
+    {
+      "answer": "6·25 피란민들이 산비탈에 형성한 계단식 마을이 벽화와 예술 작품으로 단장되어 '한국의 마추픽추'로 불리는 사하구의 대표 관광 명소입니다.",
+      "question": "감천문화마을은 어떤 곳인가요?"
+    }
+  ],
+  "geography_nature": "사하구는 부산 서남부 끝자락에 위치하며 서쪽으로는 낙동강 본류와 하구가, 남쪽으로는 남해 바다가 경계를 이룹니다. 지형은 대체로 단층 작용으로 형성된 단층산지·단층곡지·단층해안이 어우러져 있어 산과 바다가 급하게 맞닿는 경관이 특징입니다. 승학산, 아미산, 천마산, 구덕산 자락이 내륙을 감싸고, 그 사이로 좁은 평지와 계단식 주거지가 발달했습니다. 낙동강이 실어 온 토사가 쌓여 만들어진 을숙도와 다대포 일대의 삼각주·모래섬은 갈대밭과 습지를 이루어 고니를 비롯한 철새들의 세계적인 도래지가 되었습니다. 다대포 앞바다는 낙동강 담수와 바닷물이 섞이는 기수역으로 어린 물고기와 새들의 서식처 역할을 합니다. 강 하구의 습지 생태계와 급경사 해안 지형이 공존하는 점이 사하구 자연환경의 핵심입니다.",
+  "history": "사하 지역은 조선시대 동래부 사천면에 속했는데, 사천면이 상단과 하단으로 나뉘면서 낙동강 하구 쪽의 하단 지역이 훗날 구 명칭의 뿌리가 되었습니다. 1910년 행정구역 개편으로 부산부 사하면이 되었고, 1942년에는 부산부에 편입되면서 도시 영역으로 들어왔습니다. 광복 이후 서구에 속해 있던 이 일대는 인구가 크게 늘어나자 1983년 12월 15일 서구에서 분리되어 오늘날의 사하구로 신설되었습니다. 6·25 전쟁 당시 피란민들이 감천·괴정 일대 산비탈에 터를 잡으며 형성된 마을들은 이후 감천문화마을 같은 독특한 경관 유산으로 남았습니다. 낙동강 하구둑이 1987년 준공되면서 을숙도 일대의 지형과 생태 환경도 큰 변화를 겪었습니다. 이렇듯 사하구는 강과 항만을 끼고 근현대 부산의 산업화와 피란 역사를 고스란히 간직해 온 지역입니다.",
+  "intro": "사하구는 부산의 서남단, 낙동강이 남해로 흘러드는 하구에 자리한 자치구로 강과 바다가 한데 만나는 물의 고장입니다. 구 이름은 조선시대 동래부 사천면(沙川面)의 하단부(下端)에 해당한다 하여 사천의 '사(沙)'와 아래를 뜻하는 '하(下)'를 합쳐 붙여졌습니다. 낙동강 삼각주에 형성된 철새 도래지 을숙도, 백사장과 낙조로 이름난 다대포해수욕장, 계단식 산동네가 알록달록 물든 감천문화마을이 모두 이곳에 모여 있어 생태와 예술, 항만이 공존합니다. 서부산의 관문으로서 신평·장림 산업단지와 감천항을 품어 부산 경제의 한 축을 담당하기도 합니다. 자연의 원형과 도시의 활력이 나란히 살아 숨 쉬는 지역이 바로 사하구입니다.",
+  "landmarks": [
+    {
+      "description": "낙동강이 실어 온 고운 모래가 쌓여 형성된 백사장으로 수심이 얕고 수온이 따뜻해 가족 단위 피서지로 인기가 높으며, 일출과 일몰을 모두 감상할 수 있는 명소입니다.",
+      "name": "다대포해수욕장"
+    },
+    {
+      "description": "다대포 끝자락의 기암괴석과 동백숲이 어우러진 명승지로, 다대진 동헌과 임진왜란 때 순국한 정운공 순의비 등 역사 유적과 해안 산책로를 품고 있습니다.",
+      "name": "몰운대"
+    },
+    {
+      "description": "6·25 피란민들이 산비탈에 터를 잡으며 형성된 계단식 마을이 알록달록한 벽화와 예술 작품으로 재탄생해 '한국의 마추픽추'로 불리는 대표 관광지입니다.",
+      "name": "감천문화마을"
+    },
+    {
+      "description": "낙동강 하구 삼각주에 형성된 섬으로 갈대밭과 습지가 펼쳐진 세계적 철새 도래지이며, 낙동강문화관과 에코센터, 생태공원이 조성되어 있습니다.",
+      "name": "을숙도"
+    },
+    {
+      "description": "낙동강 하구의 모래섬과 기수역을 한눈에 조망하는 전망대로, 철새와 습지 생태를 배우고 서해로 지는 낙조를 감상할 수 있는 명소입니다.",
+      "name": "아미산전망대"
+    }
+  ],
+  "nature_rest": [
+    {
+      "description": "낙동강 하구 삼각주에 조성된 광활한 습지 공원으로, 갈대밭과 탐방로를 따라 철새와 물억새를 관찰하며 자전거와 산책을 즐길 수 있는 생태 휴식처입니다.",
+      "name": "을숙도 생태공원"
+    },
+    {
+      "description": "가을이면 능선을 따라 은빛 억새군락이 장관을 이루는 산으로, 부산 시가지와 낙동강 하구를 조망하는 사하구의 대표 가을 트레킹 코스입니다.",
+      "name": "승학산 억새평원"
+    },
+    {
+      "description": "아미산 자락을 따라 낙동강 하구와 모래섬, 서해 낙조를 감상하며 걷는 해안 조망 산책로로, 다대포 일대의 노을 명소로 사랑받습니다.",
+      "name": "아미산 노을마루길"
+    },
+    {
+      "description": "동백숲과 기암 해안선을 따라 이어지는 산책로로, 밀물과 썰물에 따라 섬과 바다로 모습을 바꾸는 다대포의 풍경과 낙조를 즐길 수 있습니다.",
+      "name": "몰운대 해안산책로"
+    },
+    {
+      "description": "알록달록한 어촌 창고와 배가 늘어선 포구로 '부산의 베네치아'라 불리며, 사진 명소이자 낙동강 하구의 소박한 어촌 정취를 느낄 수 있는 곳입니다.",
+      "name": "장림포구"
+    }
+  ],
+  "org_slug": "kr-busan-saha",
+  "sido": "부산광역시",
+  "sigungu": "사하구",
+  "symbols": {
+    "bird": "고니",
+    "flower": "장미",
+    "tree": "회화나무"
+  },
+  "transport": "사하구의 대중교통 대동맥은 부산 도시철도 1호선으로, 괴정역·당리역·하단역·신평역을 지나 2017년 개통한 다대포해수욕장역까지 이어져 서부산 남북축을 완성했습니다. 하단역은 새로 개통한 사상하단선 등 신규 노선과 연계되며 서부산 교통의 환승 거점으로 성장하고 있습니다. 도로는 낙동강을 따라 남북으로 뻗은 낙동대로가 구를 관통하는 중심 간선이며, 을숙도를 가로지르는 을숙도대교와 낙동강하구둑을 통해 강서구·명지 방면으로 연결됩니다. 남해고속도로와 이어지는 도로망 덕분에 화물 물류와 산업단지 접근성도 확보되어 있습니다. 시내버스와 마을버스가 산비탈 주거지와 다대포·감천 관광지를 촘촘히 연결해 대중교통 접근성을 보완합니다. 강 하구라는 지형 특성상 교량이 인접 지역과 사하구를 잇는 중요한 통로 역할을 합니다."
+}
+  </script>
 </head>
 <body>
-  <main>
-    <header>
-      <p class="eyebrow">부산광역시</p>
-      <h1>사하구</h1>
-    </header>
-    <div class="content">
-      <section id="intro">
+<style>
+  :root{
+    --saha-pink:#FFB6C1;
+    --saha-blue:#ADD8E6;
+    --saha-ink:#3a4a55;
+    --saha-mist:#f3f9fc;
+    --saha-sand:#fbeef1;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+  .saha-root{
+    font-family:'Noto Sans KR','Apple SD Gothic Neo',sans-serif;
+    color:var(--saha-ink);
+    line-height:1.75;
+    margin:0;
+  }
+  .saha-root *{box-sizing:border-box;}
+
+  /* ---- hero / panorama stage ---- */
+  .saha-hero{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(180deg,#eaf6fb 0%,#f8eef1 100%);
+    border-bottom:3px solid var(--saha-pink);
+  }
+  .saha-hero-inner{
+    max-width:960px;margin:0 auto;padding:34px 20px 14px;
+    text-align:center;position:relative;z-index:2;
+  }
+  .saha-kicker{
+    font-family:'Indie Flower',cursive;
+    font-size:26px;color:#e98aa0;letter-spacing:1px;margin:0;
+  }
+  .saha-title{
+    font-size:clamp(28px,5vw,46px);font-weight:700;margin:2px 0 6px;color:#2f3f49;
+  }
+  .saha-sub{font-size:15px;color:#5b6b76;margin:0 auto;max-width:640px;}
+  .saha-hint{
+    display:inline-flex;align-items:center;gap:8px;margin-top:14px;
+    font-size:13px;color:#7d8b95;background:rgba(255,255,255,.7);
+    padding:7px 15px;border-radius:999px;border:1px solid var(--saha-blue);
+  }
+  .saha-hint .dot{width:8px;height:8px;border-radius:50%;background:var(--saha-pink);animation:sahaPulse 1.6s infinite;}
+  @keyframes sahaPulse{0%,100%{opacity:.35;transform:scale(.8)}50%{opacity:1;transform:scale(1.3)}}
+
+  /* ---- panorama rail ---- */
+  .saha-pano-wrap{position:relative;z-index:2;}
+  .saha-pano{
+    position:relative;
+    overflow-x:auto;
+    overflow-y:hidden;
+    -webkit-overflow-scrolling:touch;
+    scroll-behavior:smooth;
+    cursor:grab;
+    padding:10px 0 22px;
+    scrollbar-width:thin;
+    scrollbar-color:var(--saha-pink) transparent;
+  }
+  .saha-pano.dragging{cursor:grabbing;scroll-behavior:auto;}
+  .saha-pano::-webkit-scrollbar{height:8px;}
+  .saha-pano::-webkit-scrollbar-thumb{background:var(--saha-pink);border-radius:8px;}
+  .saha-pano::-webkit-scrollbar-track{background:rgba(173,216,230,.3);}
+  .saha-rail{
+    position:relative;
+    display:flex;
+    align-items:flex-end;
+    gap:0;
+    min-width:2600px;
+    height:230px;
+    padding:0 40px;
+  }
+  /* skyline SVG sits behind markers */
+  .saha-skyline{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+
+  .saha-marker{
+    position:relative;
+    flex:0 0 auto;
+    width:190px;
+    text-align:center;
+    padding-bottom:22px;
+    text-decoration:none;
+    color:inherit;
+    z-index:3;
+  }
+  .saha-pin{
+    display:inline-flex;flex-direction:column;align-items:center;justify-content:center;
+    width:60px;height:60px;border-radius:50% 50% 50% 8px;
+    transform:rotate(-45deg);
+    background:#fff;border:2px solid var(--saha-pink);
+    box-shadow:0 6px 14px rgba(233,138,160,.28);
+    transition:transform .25s ease, box-shadow .25s ease, background .25s;
+    margin-bottom:14px;
+  }
+  .saha-pin span{transform:rotate(45deg);font-size:22px;}
+  .saha-marker:hover .saha-pin, .saha-marker:focus .saha-pin{
+    transform:rotate(-45deg) translateY(-8px) scale(1.08);
+    background:var(--saha-blue);
+    box-shadow:0 12px 22px rgba(173,216,230,.5);
+  }
+  .saha-marker.active .saha-pin{background:var(--saha-pink);}
+  .saha-mk-label{font-weight:700;font-size:15px;color:#3a4a55;display:block;}
+  .saha-mk-en{font-family:'Indie Flower',cursive;font-size:15px;color:#c9748a;display:block;}
+  /* stagger the markers along the panorama like a coastline */
+  .saha-marker:nth-child(2n){align-self:center;}
+  .saha-marker:nth-child(3n){align-self:flex-start;padding-top:10px;}
+
+  .saha-wave{
+    position:absolute;left:0;bottom:0;width:100%;height:46px;
+    background:repeating-linear-gradient(90deg,rgba(173,216,230,.55) 0 22px,rgba(255,182,193,.4) 22px 44px);
+    -webkit-mask:radial-gradient(circle at 11px 0,transparent 11px,#000 11px) repeat-x;
+    -webkit-mask-size:22px 46px;mask:radial-gradient(circle at 11px 0,transparent 11px,#000 11px) repeat-x;mask-size:22px 46px;
+    pointer-events:none;
+  }
+
+  /* ---- birds decoration ---- */
+  .saha-bird{position:absolute;top:26px;font-size:18px;color:#8aa7b5;opacity:.5;}
+
+  /* ---- content sections ---- */
+  .saha-content{max-width:820px;margin:0 auto;padding:30px 20px 60px;}
+  .saha-content section{
+    scroll-margin-top:20px;
+    background:#fff;
+    border:1px solid #eef4f7;
+    border-left:5px solid var(--saha-blue);
+    border-radius:16px;
+    padding:22px 26px;
+    margin:0 0 22px;
+    box-shadow:0 4px 18px rgba(173,216,230,.14);
+    transition:border-left-color .4s, box-shadow .4s;
+  }
+  .saha-content section:nth-child(2n){border-left-color:var(--saha-pink);}
+  .saha-content section.saha-lit{
+    border-left-color:var(--saha-pink);
+    box-shadow:0 8px 26px rgba(233,138,160,.22);
+  }
+  .saha-content h2{
+    font-size:22px;font-weight:700;margin:0 0 12px;color:#2f3f49;
+    display:flex;align-items:center;gap:10px;
+  }
+  .saha-content h2::before{
+    content:"";width:14px;height:14px;border-radius:50% 50% 50% 2px;
+    transform:rotate(-45deg);background:var(--saha-pink);flex:0 0 auto;
+  }
+  .saha-content p{margin:0 0 10px;}
+
+  .saha-content .facts,.saha-content .symbols{
+    list-style:none;padding:0;margin:8px 0 0;
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;
+  }
+  .saha-content .facts li,.saha-content .symbols li{
+    background:var(--saha-mist);border:1px solid #e3eef4;border-radius:12px;
+    padding:12px 14px;font-size:14px;
+  }
+  .saha-content .symbols li{background:var(--saha-sand);border-color:#f6dde3;}
+  .saha-content dl{margin:6px 0 0;}
+  .saha-content dt{font-weight:700;color:#c9748a;margin-top:8px;}
+  .saha-content dd{margin:0 0 6px;}
+
+  .saha-content .faq details{
+    border:1px solid #e7eef2;border-radius:12px;margin:0 0 10px;padding:2px 6px;
+    background:#fbfdfe;
+  }
+  .saha-content .faq summary{
+    cursor:pointer;font-weight:500;padding:12px 8px;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:10px;
+  }
+  .saha-content .faq summary::-webkit-details-marker{display:none;}
+  .saha-content .faq summary::after{content:"＋";color:var(--saha-pink);font-size:18px;transition:transform .2s;}
+  .saha-content .faq details[open] summary::after{content:"－";}
+  .saha-content .faq details[open]{border-color:var(--saha-pink);}
+  .saha-content .faq p{padding:0 8px 12px;}
+
+  .saha-content ul{padding-left:20px;}
+  .saha-content a{color:#3f7fa8;}
+  .saha-content h3{font-size:16px;font-weight:700;color:#3a4a55;margin:14px 0 6px;}
+
+  /* floating quick-nav so keyboard/no-JS users still reach sections easily */
+  .saha-mininav{
+    max-width:820px;margin:0 auto;padding:6px 20px 0;
+    display:flex;flex-wrap:wrap;gap:8px;justify-content:center;
+  }
+  .saha-mininav a{
+    font-size:12px;text-decoration:none;color:#5b6b76;
+    background:#fff;border:1px solid var(--saha-blue);border-radius:999px;padding:5px 12px;
+  }
+  .saha-mininav a:hover{background:var(--saha-blue);color:#2f3f49;}
+
+  @media (max-width:600px){
+    .saha-rail{min-width:1900px;height:200px;}
+    .saha-content section{padding:18px 18px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .saha-pano{scroll-behavior:auto;}
+    .saha-hint .dot{animation:none;}
+  }
+</style>
+
+<div class="saha-root">
+  <div class="saha-hero">
+    <div class="saha-hero-inner">
+      <p class="saha-kicker">Nakdong estuary &amp; the sea</p>
+      <h1 class="saha-title">부산광역시 사하구</h1>
+      <p class="saha-sub">사하구는 부산의 서남단, 낙동강이 남해로 흘러드는 하구에 자리한 자치구로 강과 바다가 한데 만나는 물의 고장입니다. 구 이름은 조선시대 동래부 사천면(沙川面)의 하단부(下端)에 해당한다 하여 사천의 &#x27;사(沙)&#x27;와 아래를 뜻하는 &#x27;하(下)&#x27;를 합쳐 붙여졌습니다. 낙동강 삼각주에 형성된 철새 도래지 을숙도, 백사장과 낙조로 이름난 다대포해수욕장, 계단식 산동네가 알록달록 물든 감천문화마을이 모두 이곳에 모여 있어 생태와 예술, 항만이 공존합니다. 서부산의 관문으로서 신평·장림 산업단지와 감천항을 품어 부산 경제의 한 축을 담당하기도 합니다. 자연의 원형과 도시의 활력이 나란히 살아 숨 쉬는 지역이 바로 사하구입니다.</p>
+      <span class="saha-hint"><span class="dot"></span>좌우로 드래그하여 을숙도·다대포 파노라마를 거닐어 보세요 — 마커를 누르면 이야기가 열립니다</span>
+    </div>
+
+    <div class="saha-pano-wrap">
+      <div class="saha-pano" id="sahaPano" role="region" aria-label="사하구 파노라마 내비게이션">
+        <div class="saha-rail" id="sahaRail">
+          <svg class="saha-skyline" viewBox="0 0 2600 230" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,190 C260,150 420,205 700,175 C980,145 1180,200 1500,168 C1820,140 2050,198 2600,172 L2600,230 L0,230 Z" fill="rgba(173,216,230,.35)"/>
+            <path d="M0,205 C300,180 520,220 860,195 C1200,170 1460,215 1820,190 C2160,168 2360,214 2600,196 L2600,230 L0,230 Z" fill="rgba(255,182,193,.28)"/>
+          </svg>
+          <span class="saha-bird" style="left:360px">︿</span>
+          <span class="saha-bird" style="left:410px;top:44px">︿</span>
+          <span class="saha-bird" style="left:1180px">︿</span>
+          <span class="saha-bird" style="left:1240px;top:38px">︿</span>
+          <span class="saha-bird" style="left:2050px">︿</span>
+
+          <a class="saha-marker" href="#intro" data-target="intro">
+            <span class="saha-pin"><span>🌊</span></span>
+            <span class="saha-mk-label">지역 소개</span><span class="saha-mk-en">Hello Saha</span>
+          </a>
+          <a class="saha-marker" href="#facts" data-target="facts">
+            <span class="saha-pin"><span>📌</span></span>
+            <span class="saha-mk-label">기본 정보</span><span class="saha-mk-en">Facts</span>
+          </a>
+          <a class="saha-marker" href="#history" data-target="history">
+            <span class="saha-pin"><span>📜</span></span>
+            <span class="saha-mk-label">역사</span><span class="saha-mk-en">History</span>
+          </a>
+          <a class="saha-marker" href="#geography" data-target="geography">
+            <span class="saha-pin"><span>🏞️</span></span>
+            <span class="saha-mk-label">지리</span><span class="saha-mk-en">Geography</span>
+          </a>
+          <a class="saha-marker" href="#characteristics" data-target="characteristics">
+            <span class="saha-pin"><span>✨</span></span>
+            <span class="saha-mk-label">특징</span><span class="saha-mk-en">Character</span>
+          </a>
+          <a class="saha-marker" href="#landmarks" data-target="landmarks">
+            <span class="saha-pin"><span>🗺️</span></span>
+            <span class="saha-mk-label">명소</span><span class="saha-mk-en">Landmarks</span>
+          </a>
+          <a class="saha-marker" href="#heritage" data-target="heritage">
+            <span class="saha-pin"><span>🏛️</span></span>
+            <span class="saha-mk-label">문화유산</span><span class="saha-mk-en">Heritage</span>
+          </a>
+          <a class="saha-marker" href="#nature" data-target="nature">
+            <span class="saha-pin"><span>🦆</span></span>
+            <span class="saha-mk-label">자연·쉼터</span><span class="saha-mk-en">Nature</span>
+          </a>
+          <a class="saha-marker" href="#transport" data-target="transport">
+            <span class="saha-pin"><span>🚉</span></span>
+            <span class="saha-mk-label">교통</span><span class="saha-mk-en">Transport</span>
+          </a>
+          <a class="saha-marker" href="#symbols" data-target="symbols">
+            <span class="saha-pin"><span>🎏</span></span>
+            <span class="saha-mk-label">상징</span><span class="saha-mk-en">Symbols</span>
+          </a>
+          <a class="saha-marker" href="#faq" data-target="faq">
+            <span class="saha-pin"><span>💬</span></span>
+            <span class="saha-mk-label">자주 묻는 질문</span><span class="saha-mk-en">FAQ</span>
+          </a>
+          <div class="saha-wave" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="saha-mininav" aria-label="섹션 바로가기">
+    <a href="#intro">소개</a>
+    <a href="#facts">정보</a>
+    <a href="#history">역사</a>
+    <a href="#geography">지리</a>
+    <a href="#landmarks">명소</a>
+    <a href="#heritage">문화유산</a>
+    <a href="#nature">자연</a>
+    <a href="#transport">교통</a>
+    <a href="#symbols">상징</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+
+  <main class="saha-content" id="sahaContent">
+          <section id="intro">
         <h2>지역 소개</h2>
         <p>사하구는 부산의 서남단, 낙동강이 남해로 흘러드는 하구에 자리한 자치구로 강과 바다가 한데 만나는 물의 고장입니다. 구 이름은 조선시대 동래부 사천면(沙川面)의 하단부(下端)에 해당한다 하여 사천의 &#x27;사(沙)&#x27;와 아래를 뜻하는 &#x27;하(下)&#x27;를 합쳐 붙여졌습니다. 낙동강 삼각주에 형성된 철새 도래지 을숙도, 백사장과 낙조로 이름난 다대포해수욕장, 계단식 산동네가 알록달록 물든 감천문화마을이 모두 이곳에 모여 있어 생태와 예술, 항만이 공존합니다. 서부산의 관문으로서 신평·장림 산업단지와 감천항을 품어 부산 경제의 한 축을 담당하기도 합니다. 자연의 원형과 도시의 활력이 나란히 살아 숨 쉬는 지역이 바로 사하구입니다.</p>
       </section>
@@ -261,10 +630,97 @@ footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line);
           <li><a href="https://www.saha.go.kr/tour/main.do" rel="noopener">사하구 문화관광 - 다대포·몰운대·을숙도</a> (조회 2026-07-08)</li>
         </ul>
       </section>
-    </div>
-    <footer>
-      <p>이 페이지는 공개 자료를 바탕으로 작성된 사하구 지역 정보 페이지입니다.</p>
-    </footer>
   </main>
+</div>
+
+<script>
+(function(){
+  var pano=document.getElementById('sahaPano');
+  var content=document.getElementById('sahaContent');
+  if(!pano) return;
+
+  /* ---- drag-to-scroll panorama ---- */
+  var isDown=false,startX=0,startScroll=0,moved=false;
+  pano.addEventListener('mousedown',function(e){
+    isDown=true;moved=false;pano.classList.add('dragging');
+    startX=e.pageX;startScroll=pano.scrollLeft;
+  });
+  window.addEventListener('mouseup',function(){isDown=false;pano.classList.remove('dragging');});
+  window.addEventListener('mousemove',function(e){
+    if(!isDown) return;
+    var dx=e.pageX-startX;
+    if(Math.abs(dx)>4) moved=true;
+    pano.scrollLeft=startScroll-dx;
+  });
+  /* prevent accidental navigation when the user was dragging */
+  pano.querySelectorAll('.saha-marker').forEach(function(a){
+    a.addEventListener('click',function(e){ if(moved){e.preventDefault();} });
+  });
+
+  /* touch drag (native scroll handles most, but keep momentum smooth) */
+  var tStart=0,tScroll=0;
+  pano.addEventListener('touchstart',function(e){tStart=e.touches[0].pageX;tScroll=pano.scrollLeft;},{passive:true});
+  pano.addEventListener('touchmove',function(e){pano.scrollLeft=tScroll-(e.touches[0].pageX-tStart);},{passive:true});
+
+  /* wheel: vertical wheel scrolls the panorama horizontally */
+  pano.addEventListener('wheel',function(e){
+    if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){pano.scrollLeft+=e.deltaY;e.preventDefault();}
+  },{passive:false});
+
+  /* ---- marker click -> smooth section reveal ---- */
+  var markers=Array.prototype.slice.call(pano.querySelectorAll('.saha-marker'));
+  function lightSection(id){
+    var sec=content.querySelector('#'+id);
+    if(!sec) return;
+    content.querySelectorAll('section').forEach(function(s){s.classList.remove('saha-lit');});
+    sec.classList.add('saha-lit');
+    sec.scrollIntoView({behavior:'smooth',block:'start'});
+    setTimeout(function(){sec.classList.remove('saha-lit');},2600);
+  }
+  markers.forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(moved) return;
+      var id=a.getAttribute('data-target');
+      if(content.querySelector('#'+id)){
+        e.preventDefault();
+        lightSection(id);
+        markers.forEach(function(m){m.classList.remove('active');});
+        a.classList.add('active');
+      }
+    });
+  });
+
+  /* mininav also lights the target */
+  document.querySelectorAll('.saha-mininav a').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href').slice(1);
+      if(content.querySelector('#'+id)){e.preventDefault();lightSection(id);}
+    });
+  });
+
+  /* ---- scroll-spy: highlight active marker as sections come into view ---- */
+  if('IntersectionObserver' in window){
+    var byId={};
+    markers.forEach(function(m){byId[m.getAttribute('data-target')]=m;});
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          var m=byId[en.target.id];
+          if(m){
+            markers.forEach(function(x){x.classList.remove('active');});
+            m.classList.add('active');
+            /* keep the active marker roughly centered in the rail */
+            var railBox=pano.getBoundingClientRect();
+            var mBox=m.getBoundingClientRect();
+            var delta=(mBox.left+mBox.width/2)-(railBox.left+railBox.width/2);
+            pano.scrollLeft+=delta;
+          }
+        }
+      });
+    },{rootMargin:'-45% 0px -45% 0px',threshold:0});
+    content.querySelectorAll('section[id]').forEach(function(s){io.observe(s);});
+  }
+})();
+</script>
 </body>
 </html>
